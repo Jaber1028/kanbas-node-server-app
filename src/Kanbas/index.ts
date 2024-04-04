@@ -2,11 +2,13 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Provider } from "react-redux";
+const API_BASE = process.env.REACT_APP_API_BASE;
 
 
 function Kanbas() {
   const [courses, setCourses] = useState([]);
-  const COURSES_API = "http://localhost:4000/api/courses";
+  const COURSES_API = `${API_BASE}/api/courses`
+
   useEffect(() => {
   const findAllCourses = async () => {
     const response = await axios.get(COURSES_API);

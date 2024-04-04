@@ -1,5 +1,6 @@
 import axios from "axios";
-const COURSES_API = "http://localhost:4000/api/courses";
+const API_BASE = process.env.REACT_APP_API_BASE;
+const COURSES_API = `${API_BASE}/api/courses`;
 export const createModule = async (courseId, module) => {
   const response = await axios.post(
     `${COURSES_API}/${courseId}/modules`,
@@ -8,7 +9,7 @@ export const createModule = async (courseId, module) => {
   return response.data;
 };
 
-const MODULES_API = "http://localhost:4000/api/modules";
+const MODULES_API = `${API_BASE}/api/modules`;
 export const deleteModule = async (moduleId) => {
   const response = await axios
     .delete(`${MODULES_API}/${moduleId}`);

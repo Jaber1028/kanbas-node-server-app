@@ -1,3 +1,4 @@
+const API_BASE = process.env.REACT_APP_API_BASE;
 const assignment = {
   id: 1, title: "NodeJS Assignment",
   description: "Create a NodeJS server with ExpressJS",
